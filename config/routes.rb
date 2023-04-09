@@ -10,11 +10,14 @@ Rails.application.routes.draw do
 
   # show
 
-  get "/places/:id" => "places/show"
+  get "/places/:id" => "places#show"
 
   # update
 
-  patch "/places/:id" => "places/show"
+  patch "/places/:id" => "places#update"
 
 # destroy 
+
+  delete "places/:id" => "places#destroy"
+
 end

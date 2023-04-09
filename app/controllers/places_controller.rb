@@ -1,4 +1,4 @@
-class PhotosController < ApplicationController
+class PlacesController < ApplicationController
 
   def index 
     @places = Place.all 
@@ -21,7 +21,7 @@ class PhotosController < ApplicationController
     end 
     
     def update 
-      @place - Place.find_by(id: params[:id])
+      @place = Place.find_by(id: params[:id])
       @place.update(
         name: params[:name] || place.name, 
         number: params[:number] || place.number, 
@@ -31,4 +31,9 @@ class PhotosController < ApplicationController
       )
       render :show 
     end 
+
+    def destroy 
+      @place = Place.find_by(id: params[:id])
+      @place.destroy
+      render json: {message: "this has been destroyed successfully"}
 end
