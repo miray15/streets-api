@@ -20,4 +20,15 @@ class PhotosController < ApplicationController
       render :show
     end 
     
+    def update 
+      @place - Place.find_by(id: params[:id])
+      @place.update(
+        name: params[:name] || place.name, 
+        number: params[:number] || place.number, 
+        state: params[:state] || place.number, 
+
+
+      )
+      render :show 
+    end 
 end
