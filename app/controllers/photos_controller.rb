@@ -5,4 +5,13 @@ class PhotosController < ApplicationController
     render :index
   end 
 
+  def create 
+    @place = Place.create(
+      number: params[:number],
+      name: params[:name],
+      state: params[:state]
+    )
+
+    render :show 
+  end 
 end

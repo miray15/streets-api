@@ -2,13 +2,14 @@ Rails.application.routes.draw do
 
 # index 
 
-  get "/places" => "places/#index"
+  get "/places" => "places#index"
 
 # show
 
 
-# create
 
+# create
+  get "/places" => "places#create"
 
 # update
 
